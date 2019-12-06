@@ -54,6 +54,36 @@ function pictureClicked(event){
     var pic = document.getElementById('pop-up-img');
     var url = event.currentTarget.data-url;
     pic.setAttribute('src',event.currentTarget.dataset.url);
+    
+    var dataurl = document.createAttribute('data-url');
+    dataurl.value = event.currentTarget.data-url;
+    win.setAttributeNode(dataurl);
+
+    var datauser = document.createAttribute('data-user');
+    datauser.value = event.currentTarget.data-user;
+    win.setAttributeNode(datauser);
+
+    var datadesc = document.createAttribute('data-desc');
+    datadesc.value = event.currentTarget.data-desc;
+    win.setAttributeNode(datadesc);
+    
+}
+
+function addInfo(){
+    var url = document.getElementById('add-URL');
+    var username = document.getElementById('add-username');
+    var desc = document.getElementById('add-desc');
+
+    var text = createTextNode(url.data-url);
+    url.appendChild(text);
+
+}
+
+function closePop(event){
+    var win = document.getElementById('picture-click');
+    win.classList.add('hidden');
+    var back = document.getElementById('backdrop');
+    back.classList.add('hidden');
 }
 
 
@@ -74,3 +104,7 @@ console.log(clickPicture);
 clickPicture.forEach(function(elem){
     elem.addEventListener('click',pictureClicked);
 });
+
+var closeWindow = document.getElementById('close');
+closeWindow.addEventListener('click', closePop);
+
