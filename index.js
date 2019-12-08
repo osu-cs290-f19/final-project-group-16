@@ -1,21 +1,54 @@
-var pictures = [,];
 var text = [];
 var textURL = [];
 var textDesc = [];
 var photo_name = [];
 var color;
 
-function grabPictures() {
-    var pics = document.querySelectorAll('#posts > *')
-    return pics;
-}
-
-pictures = grabPictures();
-
-for (var i = 0; i < pictures.length(); i++){
-    if (pictures[i].data-color == 'Blue'){
-        console.log(i, pictures[i].data-color);
+function findLocation(pic){
+    var pictures = document.getElementById('pictures').childNodes;
+    console.log(pic);
+    for (var i = 1; i < pictures.length; i+=2){
+        console.log(pic.getAttributeNode('data-color').value);
+        if (pic.getAttributeNode('data-color').value == 'Blue'){
+            for (var j = i; j < pictures.length; j+=2){
+                if (pictures[j].getAttributeNode('data-color').value != 'Blue'){
+                    return j;
+                }
+            }
+        }
+        if (pic.getAttributeNode('data-color').value == 'Green'){
+            for (var j = i+=2; j < pictures.length; j+=2){
+                if (pictures[j].getAttributeNode('data-color').value != 'Green'){
+                    return j-=2;
+                }
+            }
+        }
+        if (pic.getAttributeNode('data-color').value == 'Yellow'){
+            console.log(i);
+            for (var j = i+=2; j < pictures.length; j+=2){
+                if (pictures[j].getAttributeNode('data-color').value != 'Yellow'){
+                    return j-=2;
+                }
+            }
+        }
+        if (pic.getAttributeNode('data-color').value == 'Orange'){
+            console.log(i);
+            for (var j = i+=2; j < pictures.length; j+=2){
+                if (pictures[j].getAttributeNode('data-color').value != 'Orange'){
+                    return j-=2;
+                }
+            }
+        }
+        if (pic.getAttributeNode('data-color').value == 'Red'){
+            console.log(i);
+            for (var j = i+=2; j < pictures.length; j+=2){
+                if (pictures[j].getAttributeNode('data-color').value != 'Red'){
+                    return j-=2;
+                }
+            }
+        }
     }
+
 }
 
 function addURL(event){
@@ -37,21 +70,30 @@ function addPost(event){
     var posts = document.getElementById('pictures');
     var post = document.createElement('div');
     post.classList.add('post');
+    var colorSelect = document.getElementById('addendum-color-select');
+    var color = colorSelect.value;
     post.setAttribute('data-color', color);
     post.setAttribute('data-user',text);
     post.setAttribute('data-url', textURL);
     post.setAttribute('data-desc', textDesc);
-    posts.appendChild(post);
+    
 
     var postContents = document.createElement('img');
     postContents.classList.add('post-pic');
     postContents.setAttribute('src',textURL);
+
+    var index = findLocation(post);
+    posts.insertBefore(post,posts.children[index-2]);
+    var text = document.createTextNode('');
+    posts.insertBefore(text, posts.children[index-1]);
     post.appendChild(postContents);
-    var clickPicture = document.getElementById('pictures').childNodes;
-    console.log(clickPicture);
-    clickPicture.forEach(function(elem){
-        elem.addEventListener('click',pictureClicked);
-    });
+
+
+    // var clickPicture = document.getElementById('pictures').childNodes;
+    // console.log(clickPicture);
+    // clickPicture.forEach(function(elem){
+    //     elem.addEventListener('click',pictureClicked);
+    // });
 
     text = null;
     textURL = null;
@@ -117,6 +159,7 @@ console.log(clickPicture);
 clickPicture.forEach(function(elem){
     elem.addEventListener('click',pictureClicked);
 });
+
 
 var closeWindow = document.getElementById('close');
 closeWindow.addEventListener('click', closePop);
