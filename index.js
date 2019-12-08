@@ -5,6 +5,19 @@ var textDesc = [];
 var photo_name = [];
 var color;
 
+function grabPictures() {
+    var pics = document.querySelectorAll('#posts > *')
+    return pics;
+}
+
+pictures = grabPictures();
+
+for (var i = 0; i < pictures.length(); i++){
+    if (pictures[i].data-color == 'Blue'){
+        console.log(i, pictures[i].data-color);
+    }
+}
+
 function addURL(event){
     var currText = event.currentTarget.value;
     textURL= currText;
