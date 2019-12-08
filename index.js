@@ -8,7 +8,7 @@ function findLocation(pic){
     var pictures = document.getElementById('pictures').childNodes;
     console.log(pic);
     for (var i = 1; i < pictures.length; i+=2){
-        console.log(pic.getAttributeNode('data-color').value);
+
         if (pic.getAttributeNode('data-color').value == 'Blue'){
             for (var j = i; j < pictures.length; j+=2){
                 if (pictures[j].getAttributeNode('data-color').value != 'Blue'){
@@ -16,31 +16,31 @@ function findLocation(pic){
                 }
             }
         }
-        if (pic.getAttributeNode('data-color').value == 'Green'){
+        else if (pic.getAttributeNode('data-color').value == 'Green'){
             for (var j = i+=2; j < pictures.length; j+=2){
                 if (pictures[j].getAttributeNode('data-color').value != 'Green'){
                     return j-=2;
                 }
             }
         }
-        if (pic.getAttributeNode('data-color').value == 'Yellow'){
-            console.log(i);
+        else if (pic.getAttributeNode('data-color').value == 'Yellow'){
+            
             for (var j = i+=2; j < pictures.length; j+=2){
                 if (pictures[j].getAttributeNode('data-color').value != 'Yellow'){
                     return j-=2;
                 }
             }
         }
-        if (pic.getAttributeNode('data-color').value == 'Orange'){
-            console.log(i);
+        else if (pic.getAttributeNode('data-color').value == 'Orange'){
+           
             for (var j = i+=2; j < pictures.length; j+=2){
                 if (pictures[j].getAttributeNode('data-color').value != 'Orange'){
                     return j-=2;
                 }
             }
         }
-        if (pic.getAttributeNode('data-color').value == 'Red'){
-            console.log(i);
+        else if (pic.getAttributeNode('data-color').value == 'Red'){
+            
             for (var j = i+=2; j < pictures.length; j+=2){
                 if (pictures[j].getAttributeNode('data-color').value != 'Red'){
                     return j-=2;
