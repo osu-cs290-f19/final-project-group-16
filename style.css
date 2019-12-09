@@ -34,6 +34,7 @@ body {
 .album-pic {
     height: 250px;
     width: 250px;
+    border-radius: 2px;
     box-shadow: 5px 5px lightgrey;
 
 }
@@ -47,7 +48,8 @@ body {
 }
 
 .album {
-    display: inline-flex;
+    display: inline-block;
+    vertical-align: top;
     margin: 10px 10px 10px 10px;
 }
 
@@ -60,10 +62,11 @@ body {
 #add-button {
     align-items: center;
 }
+
 #update-button {
     margin: 5px 5px 5px 5px;
 }
 
-/* .hidden {
+.hidden {
     display:none;
-} */
+}

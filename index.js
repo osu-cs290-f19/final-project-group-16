@@ -44,8 +44,22 @@ function addAlbum(event){
 
     var albums = document.getElementById('albums');
     albums.appendChild(albumDiv);
+
+    var someelse = document.getElementById('add-album');
+    someelse.classList.add('hidden');
+    
+    var something = document.getElementById('album-add-pic');
+    something.classList.remove('hidden');
+
 }
 
+function showAddAlbum(event){
+    var something = document.getElementById('album-add-pic');
+    something.classList.add('hidden');
+
+    var someelse = document.getElementById('add-album');
+    someelse.classList.remove('hidden');
+}
 
 
 var addAlbumCoverURL = document.getElementById('album-cover-add');
@@ -62,3 +76,6 @@ addAlbumGenre.addEventListener('change',addGenre);
 
 var addButton = document.getElementById('add-button');
 addButton.addEventListener('click',addAlbum);
+
+var addAlbumPic = document.getElementById('album-add-pic');
+addAlbumPic.addEventListener('click',showAddAlbum);
