@@ -19,13 +19,11 @@
                 <div class="filter-album">
                     <label for="filter-album-name">Album Name</label>
                     <input type="text" name="album-name" id="album-name-filter">
-                    <button id="update-album" class="action-button">Update</button>
                 </div>
 
                 <div class="filter-artist">
                     <label for="filter-artist-name">Artist Name</label>
                     <input type="text" name="artist-name" id="artist-name-filter">
-                    <button id="update-artist" class="action-button">Update</button>
                 </div>
                 <div class="filter-genre">
                     <label for="genre-selection">Genre</label>
@@ -36,8 +34,8 @@
                         <option selected>Rock</option>
                         <option>Classical</option>
                     </select>
-                    <button id="update-genre" class="action-button">Update</button>
                 </div>
+                <button id="update-button" class="action-button">Update</button>
             </div>
         </section> 
 
@@ -56,5 +54,25 @@
                     </div>
                 </div>
         </section>
+
+        <aside id="add-album" class="hidden">
+            <div class="container-add-album">
+                <div  class="album-name-add">
+                    <label for="add-album-name">Album Name</label>
+                    <input type="text" name="album-name" id="album-name-add">
+                </div>
+                <div class="album-artist-name">
+                    <label for="add-artist-name">Artist Name</label>
+                    <input type="text" name="artist-name" id="artist-name-add">
+                </div>
+                <div class="album-genre-name">
+                        <label for="add-genre-name">Genre</label>
+                        <input type="text" name="genre-name" id="genre-name-add">
+                    </div>
+            </div>
+            <button id="add-button" class="action-button">Add</button>
+        </aside>
+
+
     </main>
 </html>
