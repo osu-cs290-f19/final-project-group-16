@@ -33,10 +33,6 @@ body {
 
 }
 
-.action-button {
-  
-}
-
 #albums {
     display: flex;
 }
@@ -49,6 +45,7 @@ body {
     float: right;
     position: relative;
     margin: 5px 5px 5px 5px;
+    height:100vh;
 
 }
 #add-button {
