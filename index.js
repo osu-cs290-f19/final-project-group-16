@@ -1,23 +1,29 @@
 var pictures = [,];
-var text = [];
 var textURL = [];
-var textDesc = [];
-var photo_name = [];
+var genre = [];
+var album = [];
+var artist = [];
 var color;
 
-function addURL(event){
+function addAlbumName(event){
     var currText = event.currentTarget.value;
-    textURL= currText;
+    album = currText;
 }
 
-function addName(event){
+function addGenre(event){
     var currText = event.currentTarget.value;
-    text = currText;
+    genre = currText;
 }
 
-function addDesc(event){
+function addURl(event){
     var currText = event.currentTarget.value;
-    textDesc = currText;
+    textURL = currText;
+}
+
+function addArtist(event){
+    var currText = event.currentTarget.value;
+    artist = currText;
+
 }
 
 function addPost(event){
