@@ -1,7 +1,7 @@
 header {
     display: flex;
-    height: 100px;
-    background-color: rgb(20,20,20);
+    height: 150px;
+    background-color: rgb(20, 20, 20);
     color: rgb(233,233,233);
     margin: 0 0 0 0;
 }
@@ -38,12 +38,14 @@ body {
 }
 
 #album {
-    margin: 4px 4px 4px 4px;
+    margin: 10px 10px 10px 10px;
 }
 
 #add-album {
     float: right;
     position: relative;
+    margin: 5px 5px 5px 5px;
+    height:100vh;
 }
 
   #add-album div {
