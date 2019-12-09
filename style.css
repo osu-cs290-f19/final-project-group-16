@@ -44,3 +44,20 @@ body {
 #album {
     margin: 10px 10px 10px 10px;
 }
+
+#add-album{
+    float: right;
+    position: relative;
+    margin: 5px 5px 5px 5px;
+
+}
+#add-button {
+    align-items: center;
+}
+#update-button {
+    margin: 5px 5px 5px 5px;
+}
+
+/* .hidden {
+    display:none;
+} */
