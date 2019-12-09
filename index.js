@@ -3,47 +3,62 @@ var genre = [];
 var album = [];
 var artist = [];
 
-// function addAlbumName(event){
-//     var currText = event.currentTarget.value;
-//     album = currText;
-// }
 
-// function addGenre(event){
-//     var currText = event.currentTarget.value;
-//     genre = currText;
-// }
-
-// function addURl(event){
-//     var currText = event.currentTarget.value;
-//     textURL = currText;
-// }
-
-// function addArtist(event){
-//     var currText = event.currentTarget.value;
-//     artist = currText;
-
-// }
-
-function openNav() {
-    document.getElementById('add-album').style.width = "250px";
+function addURL(event){
+    var currText = event.currentTarget.value;
+    coverURL = currText;
 }
 
-function closeNav() {
-    document.getElementById('add-album').style.width = "0";
+function addAlbumName(event){
+    var currText = event.currentTarget.value;
+    album = currText;
 }
 
-function albumClicked(event){
-
-
+function addArtist(event){
+    var currText = event.currentTarget.value;
+    artist = currText;
 }
 
-function popOut(event){
-    openNav();
+function addGenre(event){
+    var currText = event.currentTarget.value;
+    genre = currText;
 }
 
-var hoverAdd = document.getElementById('add-album');
-hoverAdd.addEventListener('hover',popOut);
-var albums = document.getElementById('albums').childNodes;
-albums.forEach(function(elem){
-    elem.addEventListener('click',albumClicked);
-});
+function addAlbum(event){
+    var albumDiv = document.createElement('div');
+    albumDiv.classList.add('album');
+    albumDiv.setAttribute('data-album',album);
+    albumDiv.setAttribute('data-artist',artist);
+    albumDiv.setAttribute('data-genre', genre);
+
+    var albumImg = document.createElement('img');
+    albumImg.src= coverURL;
+    albumImg.classList.add('album-pic');
+
+    albumDiv.appendChild(albumImg);
+
+    var songDiv = document.createElement('div');
+    songDiv.classList.add('hidden');
+
+    albumDiv.appendChild(songDiv);
+
+    var albums = document.getElementById('albums');
+    albums.appendChild(albumDiv);
+}
+
+
+
+var addAlbumCoverURL = document.getElementById('album-cover-add');
+addAlbumCoverURL.addEventListener('change',addURL);
+
+var addAlbumNameText = document.getElementById('album-name-add');
+addAlbumNameText.addEventListener('change',addAlbumName);
+
+var addAlbumArtist = document.getElementById('artist-name-add');
+addAlbumArtist.addEventListener('change',addArtist);
+
+var addAlbumGenre = document.getElementById('genre-name-add');
+addAlbumGenre.addEventListener('change',addGenre);
+
+var addButton = document.getElementById('add-button');
+addButton.addEventListener('click',addAlbum);

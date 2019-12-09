@@ -15,15 +15,20 @@ body {
     margin: 0 0 0 0;
 }
 
+.content {
+    display: flex;
+}
 #topbar {
     display: inline-flex;
     font-family: Arial;
+    width:100%;
+    background-color: whitesmoke;
+    justify-content: center;
 }
 
 #topbar div {
     float: left;
-    margin: 5px 5px 5px 5px;
-
+    margin: 5px 100px 5px 5px;
 }
 
 .album-pic {
@@ -41,13 +46,17 @@ body {
     margin: 10px 10px 10px 10px;
 }
 
+.album {
+    display: inline-flex;
+    margin: 10px 10px 10px 10px;
+}
+
 #add-album{
     float: right;
-    position: relative;
     margin: 5px 5px 5px 5px;
     height:100vh;
-
 }
+
 #add-button {
     align-items: center;
 }
