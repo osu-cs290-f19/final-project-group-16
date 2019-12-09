@@ -1,0 +1,26 @@
+{
+  "name": "final-project-group-16",
+  "version": "1.0.0",
+  "description": "Final project for CS290",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-f19/final-project-group-16.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-f19/final-project-group-16/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-f19/final-project-group-16#readme"
+}
