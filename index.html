@@ -1,87 +1,60 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="style.css" rel="stylesheet">
-        <script src="index.js" charset="utf-8" defer></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js" charset="utf-8" defer></script>  
     </head>
-    <body>
-        <header>
-            <div>
-                <img src="imgs/picture.jpg">
-            </div>
-        </header>
 
-
-        <main>
-            <aside id="picture-addendum">
-                <h2>Add a new picture</h2>
-
-                <div class="addendum-url-container">
-                    <label for="addendum-url" class="addendum-label">URL</label>
-                    <div class="addendum-input">
-                        <input type="text" name="addendum-url" id="addendum-url" class="addendum-input" placeholder ="url">
-                    </div>
-                </div>
-                <div class="addendum-name-container">
-                    <label for="addendum-name" class="addendum-label">Username</label>
-                    <div class="addendum-input">
-                        <input type="text" name="addendum-name" id="addendum-name" class='addendum-input' placeholder="name">
-                    </div>
-                </div>
-                <div class="addendum-desc-container">
-                        <label for="addendum-desc" class="addendum-label">Desc</label>
-                        <div class="addendum-desc">
-                            <input type="text" name="addendum-desc" id="addendum-desc" class='addendum-input' placeholder="say something">
-                        </div>
-                    </div>
-
-                <div class="addendum-color-container">
-                    <label for="addendum-color" class="addendum-label">Color</label>
-                    <div class="addendum-color">
-                        <select id="addendum-color-select" class="addendum-input" name="addendum-color">
-                            <option selected value="">White</option>
-                            <option>Dark Blue</option>
-                            <option>Blue</option>
-                            <option>Light Blue</option>
-                            <option>Dark Green</option>
-                            <option>Green</option>
-                            <option>Light Green</option>
-                            <option>Yellow</option>
-                            <option>Orange</option>
-                            <option>Red</option>
-                        </select>
-                    </div>
-                </div>
-                <button id="addendum-button" class="addendum-action">Add Item</button>
-            </aside>
-            <section id="pictures">
-                <div id="post" data-color="Blue" data-url='imgs/blue_img.jpg' data-user="admin" data-desc='a blue image'>
-                    <img src="imgs/blue_img.jpg" class="post-pic">
-                </div>
-                <div id="post" data-color="Green" data-url='imgs/green_img.jpg' data-user="admin" data-desc='a green image'>
-                    <img src="imgs/green_img.jpg" class="post-pic">
-                </div>
-                <div id="post" data-color="Yellow" data-url='imgs/yellow_img.jpg' data-user="admin" data-desc='a yellow image'>
-                    <img src="imgs/yellow_img.jpg" class="post-pic">
-                </div>
-                <div id="post" data-color="Orange" data-url='imgs/orange_img.jpg' data-user="admin" data-desc='a orange image'>
-                    <img src="imgs/orange_img.jpg" class="post-pic">
-                </div>
-                <div id="post" data-color="Red" data-url='imgs/red_img.jpg' data-user="admin" data-desc='a red image'>
-                    <img src="imgs/red_img.jpg" class="post-pic">
-                </div>
-            </section>
-        </main>
-
-        <div id='backdrop' class='hidden'></div>
-        <div id='picture-click' class='hidden'>
-            <img id='pop-up-img'>
-            <aside id="pic-info">
-                <button id='close'>Close</button>
-                <div id='add-URL'>URL: </div>
-                <div id='add-username'>Username: </div>
-                <div id='add-desc'>Description: </div>
-            </aside>
+    <header>
+        <div>
+            <img src="">
         </div>
-    </body>
+        
+        <h1>Bookcase Album</h1>
+
+    </header>
+    <main>
+        <section id='topbar'>
+            <div>
+                <div class="filter-album">
+                    <label for="filter-album-name">Album Name</label>
+                    <input type="text" name="album-name" id="album-name-filter">
+                    <button id="update-album" class="action-button">Update</button>
+                </div>
+
+                <div class="filter-artist">
+                    <label for="filter-artist-name">Artist Name</label>
+                    <input type="text" name="artist-name" id="artist-name-filter">
+                    <button id="update-artist" class="action-button">Update</button>
+                </div>
+                <div class="filter-genre">
+                    <label for="genre-selection">Genre</label>
+                    <select id="genre-select">
+                        <option>Pop</option>
+                        <option>Rap</option>
+                        <option>Hip-Hop</option>
+                        <option selected>Rock</option>
+                        <option>Classical</option>
+                    </select>
+                    <button id="update-genre" class="action-button">Update</button>
+                </div>
+            </div>
+        </section> 
+
+        <section id='albums'>
+            <div id='album' data-album="To Pimp a Butterfly" data-artist="Kendrick Lamar" data-genre="Rap" >
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81VcA8-kuZL._SY355_.jpg" class="album-pic">
+                <div id='songs' class='hidden'>
+                    <!-- Songs go here -->
+                </div>
+            </div>
+
+            <div id='album' data-album="Eagles Greatest Hits" data-artist="Eagles" data-genre="Rock" >
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/91F2qN8x-8L._SL1500_.jpg" class="album-pic">
+                    <div id='songs' class='hidden'>
+                        <!-- Songs go here -->
+                    </div>
+                </div>
+        </section>
+    </main>
 </html>
