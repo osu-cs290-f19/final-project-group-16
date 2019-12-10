@@ -49,26 +49,6 @@ function insertAlbum(name, artist, genre, url){
 }
 
 function addAlbum(event){
-    // var albumDiv = document.createElement('div');
-    // albumDiv.classList.add('album');
-    // albumDiv.setAttribute('data-album',album);
-    // albumDiv.setAttribute('data-artist',artist);
-    // albumDiv.setAttribute('data-genre', genre);
-
-    // var albumImg = document.createElement('img');
-    // albumImg.src= coverURL;
-    // albumImg.classList.add('album-pic');
-
-    // albumDiv.appendChild(albumImg);
-
-    // var songDiv = document.createElement('div');
-    // songDiv.classList.add('hidden');
-
-    // albumDiv.appendChild(songDiv);
-
-    // var albums = document.getElementById('albums');
-    // albums.appendChild(albumDiv);
-
     insertAlbum(album, artist, genre, coverURL);
 
     var someelse = document.getElementById('add-album');
@@ -79,6 +59,8 @@ function addAlbum(event){
 
 }
 
+
+// WIP
 function albumSearch(albumPost, filters) {
     if (filters.albumName){
         var name = albumPost.album.toLowerCase();
@@ -104,6 +86,7 @@ function albumSearch(albumPost, filters) {
     return true;
 }
 
+// WIP
 function doFilters() {
     var filters = {
         albumName : document.getElementById('album-name-filter').value.trim(),
@@ -123,6 +106,7 @@ function doFilters() {
     });
 }
 
+// WIP
 function parseAlbumElem(album){
     var post = {
         name: album.getAttribute('data-album'),
@@ -144,6 +128,7 @@ function showAddAlbum(event){
     someelse.classList.remove('hidden');
 }
 
+// WIP
 function filterAlbums(event){
     doFilters();
 }
