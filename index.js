@@ -64,6 +64,7 @@ function addAlbum(event){
 function albumSearch(albumPost, filters) {
     if (filters.albumName){
         var name = albumPost.album.toLowerCase();
+        console.log(name);
         var filterName = filters.albumName.toLowerCase();
 
         if (name.indexOf(filterName) === -1) {
@@ -73,6 +74,7 @@ function albumSearch(albumPost, filters) {
 
     if (filters.artistName){
         var artist = albumPost.artist.toLowerCase();
+        console.log(artist);
         var filterArtist = filters.artistName.toLowerCase();
         if (artist.indexOf(filterArtist) === -1){
             return false;
@@ -80,6 +82,7 @@ function albumSearch(albumPost, filters) {
     }
 
     if (albumPost.genre != filters.genre){
+        console.log(albumPost.genre);
         return false;
     }
 
