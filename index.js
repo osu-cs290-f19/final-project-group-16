@@ -131,7 +131,6 @@ function parseAlbumElem(album){
     };
 
     var postImg = album.querySelector('#album > img:first-of-type');
-    console.log(postImg);
     post.url = postImg.src;
 
     return post;
@@ -145,6 +144,9 @@ function showAddAlbum(event){
     someelse.classList.remove('hidden');
 }
 
+function updateButton(event){
+
+}
 
 var albumElems = document.getElementsByClassName('album');
   for (var i = 0; i < albumElems.length; i++) {
@@ -169,3 +171,6 @@ addButton.addEventListener('click',addAlbum);
 
 var addAlbumPic = document.getElementById('album-add-pic');
 addAlbumPic.addEventListener('click',showAddAlbum);
+
+var updateButton = document.getElementById('update-button');
+updateButton.addEventListener('click', filterAlbums);
