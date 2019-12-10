@@ -118,6 +118,7 @@ function doFilters() {
 
     allAlbums.forEach(function(album) {
         if (albumSearch(album,filters)){
+            insertAlbum(album.name, album.artist, album.genre, coverURL);
         }
     });
 }
@@ -129,7 +130,8 @@ function parseAlbumElem(album){
         genre : album.getAttribute('genre')
     };
 
-    var postImg = album.querySelector('album-pic');
+    var postImg = album.querySelector('#album > img:first-of-type');
+    console.log(postImg);
     post.url = postImg.src;
 
     return post;
@@ -142,6 +144,12 @@ function showAddAlbum(event){
     var someelse = document.getElementById('add-album');
     someelse.classList.remove('hidden');
 }
+
+
+var albumElems = document.getElementsByClassName('album');
+  for (var i = 0; i < albumElems.length; i++) {
+    allAlbums.push(parseAlbumElem(albumElems[i]));
+  }
 
 
 var addAlbumCoverURL = document.getElementById('album-cover-add');
