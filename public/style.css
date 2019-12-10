@@ -1,80 +1,91 @@
 header {
     display: flex;
     height: 150px;
-    background-color: rgb(20,20,20);
+    background-color: rgb(20, 20, 20);
     color: rgb(233,233,233);
-    margin: 0 0 10px 0;
+    margin: 0 0 0 0;
 }
+
+header h1 {
+    font-family: Arial;
+    margin: 25px;
+}
+
 body {
     margin: 0 0 0 0;
 }
 
-.title {
-    margin: 40px 0 0 40px;
-    display: flex;
-    font-size: 48px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#topbar {
+    display: inline-flex;
+    font-family: Arial;
+    width:100%;
+    background-color: whitesmoke;
+    justify-content: center;
 }
 
-#picture-addendum {
-    position:fixed;
-    margin: 0 0 0 20px;
+#topbar div {
+    float: left;
+    margin: 5px 100px 5px 5px;
+}
+
+.album-pic {
+    height: 250px;
+    width: 250px;
     border-radius: 2px;
-    background-color: lightgrey;
-    padding: 2px 10px 10px 10px;
-}
-
-#pictures {
-    display: flex;
-    margin: 10px 0 0 250px;
+    box-shadow: 5px 5px lightgrey;
 
 }
 
-.post-pic {
-    height: 50px;
-    width: 50px;
-    border-radius: 2px;
-    box-shadow: 10px 5px whitesmoke;
-    display:flex;
+#albums {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.post-pic-hover {
-    height: 100px;
-    width: 100px;
-    box-shadow: 10px 5px whitesmoke;
+#album {
+    margin: 10px 10px 10px 10px;
+}
+
+.album {
+  display: flex;
+  flex-wrap: wrap;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 10px 10px 10px;
+}
+
+#add-album{
+    float: right;
+    margin: 5px 5px 5px 5px;
+    height:100vh;
+}
+
+#add-album div {
+    font-family: Arial;
+    margin: 10px 10px 10px 10px;
+}
+
+#add-button {
+    align-items: center;
+}
+
+#topbar {
+  background-color: #b3b3b3;
+  width: 100%;
+}
+
+#update-button {
+    margin: 5px 5px 5px 5px;
+    padding: 3px 3px 3px 3px;
+    background-color: #262626; /* dark background */
+    color: #f2f2f2; /* light font color */
+    border-radius: 5px;
+    font-weight: bold;
 }
 
 .hidden {
     display:none;
 }
-
-#close {
-    position: relative;
-    right: 100%;
-}
-
-#picture-click {
-    width: auto;
-    max-width: 600px;
-    min-width: 350px;
-    min-height: 300px;
-    margin: 40px auto;
-    background-color: #fff;
-    border-radius: 15px;
-  }
-  
-#backdrop{
-    position: fixed;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: rgba(0,0,0,0.85);
-}
-
-#pic-info {
-    position: relative;
-    background-color: #fff;
-}
-
