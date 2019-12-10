@@ -34,6 +34,8 @@ function insertAlbum(name, artist, genre, url){
       url: url
     });
     console.log(newAlbumPost);
+    var contentSection = document.getElementById('albums');
+    contentSection.insertAdjacentHTML('beforeend', newAlbumPost);
 
 //     var albumDiv = document.createElement('div');
 //     albumDiv.classList.add('album');
