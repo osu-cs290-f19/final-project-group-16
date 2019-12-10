@@ -27,25 +27,33 @@ function addGenre(event){
 }
 
 function insertAlbum(name, artist, genre, url){
-    var albumDiv = document.createElement('div');
-    albumDiv.classList.add('album');
-    albumDiv.setAttribute('data-album',name);
-    albumDiv.setAttribute('data-artist',artist);
-    albumDiv.setAttribute('data-genre', genre);
+  var newAlbumPost = Handlebars.templates.albumDiv({
+      album: name,
+      artist: artist,
+      genre: genre,
+      url: url
+    });
+    console.log(newAlbumPost);
 
-    var albumImg = document.createElement('img');
-    albumImg.src= url;
-    albumImg.classList.add('album-pic');
-
-    albumDiv.appendChild(albumImg);
-
-    var songDiv = document.createElement('div');
-    songDiv.classList.add('hidden');
-
-    albumDiv.appendChild(songDiv);
-
-    var albums = document.getElementById('albums');
-    albums.appendChild(albumDiv);
+//     var albumDiv = document.createElement('div');
+//     albumDiv.classList.add('album');
+//     albumDiv.setAttribute('data-album',name);
+//     albumDiv.setAttribute('data-artist',artist);
+//     albumDiv.setAttribute('data-genre', genre);
+//
+//     var albumImg = document.createElement('img');
+//     albumImg.src= url;
+//     albumImg.classList.add('album-pic');
+//
+//     albumDiv.appendChild(albumImg);
+//
+//     var songDiv = document.createElement('div');
+//     songDiv.classList.add('hidden');
+//
+//     albumDiv.appendChild(songDiv);
+//
+//     var albums = document.getElementById('albums');
+//     albums.appendChild(albumDiv);
 }
 
 function addAlbum(event){
@@ -53,7 +61,7 @@ function addAlbum(event){
 
     var someelse = document.getElementById('add-album');
     someelse.classList.add('hidden');
-    
+
     var something = document.getElementById('album-add-pic');
     something.classList.remove('hidden');
 
