@@ -144,8 +144,8 @@ function showAddAlbum(event){
     someelse.classList.remove('hidden');
 }
 
-function updateButton(event){
-
+function filterAlbums(event){
+    doFilters();
 }
 
 var albumElems = document.getElementsByClassName('album');
