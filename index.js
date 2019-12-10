@@ -62,10 +62,10 @@ function addAlbum(event){
 
 // WIP
 function albumSearch(albumPost, filters) {
+    console.log(filters.album);
     if (filters.albumName){
-        var name = albumPost.album.toLowerCase();
-        console.log(name);
-        var filterName = filters.albumName.toLowerCase();
+        var name = albumPost.name.toLowerCase();
+        var filterName = filters.album.toLowerCase();
 
         if (name.indexOf(filterName) === -1) {
             return false;
@@ -82,7 +82,6 @@ function albumSearch(albumPost, filters) {
     }
 
     if (albumPost.genre != filters.genre){
-        console.log(albumPost.genre);
         return false;
     }
 
@@ -137,9 +136,11 @@ function filterAlbums(event){
 }
 
 var albumElems = document.getElementsByClassName('album');
-  for (var i = 0; i < albumElems.length; i++) {
-    allAlbums.push(parseAlbumElem(albumElems[i]));
-  }
+for (var i = 0; i < albumElems.length; i++) {
+allAlbums.push(parseAlbumElem(albumElems[i]));
+}
+console.log(allAlbums);
+
 
 
 var addAlbumCoverURL = document.getElementById('album-cover-add');
