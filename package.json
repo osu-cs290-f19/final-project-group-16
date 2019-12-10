@@ -1,0 +1,25 @@
+{
+  "name": "final-project-group-16",
+  "version": "1.0.0",
+  "description": "Final Project for CS 290",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs290-f19/final-project-group-16.git"
+  },
+  "author": "Fernando Campos, Grace Todd, Milan Thakkar, Simon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs290-f19/final-project-group-16/issues"
+  },
+  "homepage": "https://github.com/osu-cs290-f19/final-project-group-16#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "handlebars": "^4.5.3"
+  }
+}
