@@ -3,6 +3,8 @@ var genre = [];
 var album = [];
 var artist = [];
 
+var allAlbums = [];
+
 
 function addURL(event){
     var currText = event.currentTarget.value;
@@ -24,15 +26,15 @@ function addGenre(event){
     genre = currText;
 }
 
-function addAlbum(event){
+function insertAlbum(name, artist, genre, url){
     var albumDiv = document.createElement('div');
     albumDiv.classList.add('album');
-    albumDiv.setAttribute('data-album',album);
+    albumDiv.setAttribute('data-album',name);
     albumDiv.setAttribute('data-artist',artist);
     albumDiv.setAttribute('data-genre', genre);
 
     var albumImg = document.createElement('img');
-    albumImg.src= coverURL;
+    albumImg.src= url;
     albumImg.classList.add('album-pic');
 
     albumDiv.appendChild(albumImg);
@@ -44,6 +46,30 @@ function addAlbum(event){
 
     var albums = document.getElementById('albums');
     albums.appendChild(albumDiv);
+}
+
+function addAlbum(event){
+    // var albumDiv = document.createElement('div');
+    // albumDiv.classList.add('album');
+    // albumDiv.setAttribute('data-album',album);
+    // albumDiv.setAttribute('data-artist',artist);
+    // albumDiv.setAttribute('data-genre', genre);
+
+    // var albumImg = document.createElement('img');
+    // albumImg.src= coverURL;
+    // albumImg.classList.add('album-pic');
+
+    // albumDiv.appendChild(albumImg);
+
+    // var songDiv = document.createElement('div');
+    // songDiv.classList.add('hidden');
+
+    // albumDiv.appendChild(songDiv);
+
+    // var albums = document.getElementById('albums');
+    // albums.appendChild(albumDiv);
+
+    insertAlbum(album, artist, genre, coverURL);
 
     var someelse = document.getElementById('add-album');
     someelse.classList.add('hidden');
@@ -51,6 +77,62 @@ function addAlbum(event){
     var something = document.getElementById('album-add-pic');
     something.classList.remove('hidden');
 
+}
+
+function albumSearch(albumPost, filters) {
+    if (filters.albumName){
+        var name = albumPost.album.toLowerCase();
+        var filterName = filters.albumName.toLowerCase();
+
+        if (name.indexOf(filterName) === -1) {
+            return false;
+        }
+    }
+
+    if (filters.artistName){
+        var artist = albumPost.artist.toLowerCase();
+        var filterArtist = filters.artistName.toLowerCase();
+        if (artist.indexOf(filterArtist) === -1){
+            return false;
+        }
+    }
+
+    if (albumPost.genre != filters.genre){
+        return false;
+    }
+
+    return true;
+}
+
+function doFilters() {
+    var filters = {
+        albumName : document.getElementById('album-name-filter').value.trim(),
+        artistName : document.getElementById('artist-name-filter').value.trim(),
+        genre : document.getElementById('genre-select').value.trim()
+    }
+
+    var albumContainer = document.getElementById('albums');
+    while(albumContainer.lastChild){
+        albumContainer.removeChild(albumContainer.lastChild);
+    }
+
+    allAlbums.forEach(function(album) {
+        if (albumSearch(album,filters)){
+        }
+    });
+}
+
+function parseAlbumElem(album){
+    var post = {
+        name: album.getAttribute('data-album'),
+        artist : album.getAttribute('data-artist'),
+        genre : album.getAttribute('genre')
+    };
+
+    var postImg = album.querySelector('album-pic');
+    post.url = postImg.src;
+
+    return post;
 }
 
 function showAddAlbum(event){
