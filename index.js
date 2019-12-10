@@ -62,6 +62,8 @@ function showAddAlbum(event){
 }
 
 
+
+
 var addAlbumCoverURL = document.getElementById('album-cover-add');
 addAlbumCoverURL.addEventListener('change',addURL);
 
