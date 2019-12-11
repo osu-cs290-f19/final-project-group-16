@@ -27,15 +27,15 @@ function addGenre(event){
 }
 
 function insertAlbum(name, artist, genre, url){
-  var newAlbumPost = Handlebars.templates.albumDiv({
+    var newAlbumPost = Handlebars.templates.albumDiv({
       album: name,
       artist: artist,
       genre: genre,
       url: url
     });
-    console.log(newAlbumPost);
-    var contentSection = document.getElementById('albums');
-    contentSection.insertAdjacentHTML('beforeend', newAlbumPost);
+
+    var albumSection = document.getElementById('albums');
+    albumSection.insertAdjacentHTML('beforeend', newAlbumPost);
 
 //     var albumDiv = document.createElement('div');
 //     albumDiv.classList.add('album');

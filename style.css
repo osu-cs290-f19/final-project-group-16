@@ -41,6 +41,7 @@ body {
 
 #albums {
     display: flex;
+    flex-wrap: wrap;
 }
 
 #album {
