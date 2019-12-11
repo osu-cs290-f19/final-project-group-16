@@ -91,3 +91,13 @@ body {
 .hidden {
     display:none;
 }
+
+/* 404 cs */
+
+.error-page {
+  text-align: center;
+  font-size: xx-large;
+}
+.error-page h4 {
+  font-weight: lighter;
+}
