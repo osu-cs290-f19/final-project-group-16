@@ -44,7 +44,7 @@ function getAlbumIdFromURL(){
     var path = window.location.pathname;
     var pathParts = path.split('/');
 
-    if (pathParts[1] === "album"){
+    if (pathParts[1] === "people"){
         return pathParts[2];
     } else {
         return null
@@ -57,8 +57,8 @@ function addAlbum(event){
     }else {
 
     var postRequest = new XMLHttpRequest();
-    var requestURL = '/album/' + getAlbumIdFromURL() + '/addAlbum';
-    postRequest.open('POST',requestURL);
+    var requestURL = '/people/' + getAlbumIdFromURL() + '/addAlbum';
+    postRequest.open('ALBUM',requestURL);
 
     var requestBody = JSON.stringify({
         url : coverURL,
