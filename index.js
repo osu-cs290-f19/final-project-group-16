@@ -59,7 +59,7 @@ function insertAlbum(name, artist, genre, url){
 }
 
 function addAlbum(event){
-    if(!album || !artist ||!genre || !coverURL){
+    if(!album || !artist || !genre || !coverURL){
       alert("You must fill all fields to add an album");
     }else {
 
