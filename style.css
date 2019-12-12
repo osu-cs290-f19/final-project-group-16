@@ -35,8 +35,8 @@ body { /* Include background image of a shelf. Repeats and follows when the user
 }
 
 #topbar div {
-    float: left;
-    margin: 10px 10px 10px 10px;
+  float: left;
+  margin: 10px 10px 10px 10px;
 }
 
 #update-button { /* Update button in the top bar */
@@ -103,24 +103,34 @@ body { /* Include background image of a shelf. Repeats and follows when the user
     color: #dcbd8e; /* daker font color */
     border-radius: 5px;
     font-weight: bold;
-    border-color: #8c8c8c;
+    border-color: #89642a;
     border-style: solid;
+}
+
+.action-button:hover { /* Inverts the colors of button on hover */
+  background-color: #dcbd8e;
+  color: #89642a;
 }
 
 .close {
     margin: 5px 5px 5px 5px;
     padding: 3px 3px 3px 3px;
-    background-color: #a6a6a6; /* light background */
-    color: white; /* daker font color */
+    background-color: #89642a; /* light background */
+    color: #dcbd8e; /* daker font color */
     border-radius: 5px;
     font-weight: bold;
-    border-color: #8c8c8c;
+    border-color: #89642a;
     border-style: solid;
+}
+
+.close:hover { /* Inverts the colors of the "close" button on hover */
+  background-color: #dcbd8e;
+  color: #89642a;
 }
 
 label {
   font-weight: bold;
-  color: #737373;
+  color: #89642a;
 }
 
 input {
@@ -129,18 +139,19 @@ input {
   outline: 0;
   padding-left: 10px;
   padding: 5px 0px 5px 10px;
-  background: #a3815e;
+  background: #89642a;
   font-weight: bold;
-  color: white;
+  color: #dcbd8e;
 }
 
 select {
-  background: #a3815e;
-  color: white;
+  background: #89642a;
+  color: #dcbd8e;
 }
 
 option {
-  background: #bfbfbf;
+  /* background: #bfbfbf; */
+  background: #89642a;
 }
 
 option:hover {
