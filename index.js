@@ -66,16 +66,15 @@ function addAlbum(event){
 
     var something = document.getElementById('album-add-pic');
     something.classList.remove('hidden');
-
 }
 
 
 // WIP
 function albumSearch(albumPost, filters) {
-    console.log(filters.album);
+    console.log(albumPost);
     if (filters.albumName){
-        var name = albumPost.name.toLowerCase();
-        var filterName = filters.album.toLowerCase();
+        var name = albumPost.name;
+        var filterName = filters.album;
 
         if (name.indexOf(filterName) === -1) {
             return false;
@@ -83,9 +82,9 @@ function albumSearch(albumPost, filters) {
     }
 
     if (filters.artistName){
-        var artist = albumPost.artist.toLowerCase();
+        var artist = albumPost.artist;
         console.log(artist);
-        var filterArtist = filters.artistName.toLowerCase();
+        var filterArtist = filters.artistName;
         if (artist.indexOf(filterArtist) === -1){
             return false;
         }
@@ -106,6 +105,8 @@ function doFilters() {
         genre : document.getElementById('genre-select').value.trim()
     }
 
+    console.log(filters);
+
     var albumContainer = document.getElementById('albums');
     while(albumContainer.lastChild){
         albumContainer.removeChild(albumContainer.lastChild);
@@ -120,6 +121,7 @@ function doFilters() {
 
 // WIP
 function parseAlbumElem(album){
+
     var post = {
         name: album.getAttribute('data-album'),
         artist : album.getAttribute('data-artist'),
