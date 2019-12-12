@@ -76,10 +76,9 @@ function addAlbum(event){
 
 // WIP
 function albumSearch(albumPost, filters) {
-    console.log(albumPost);
     if (filters.albumName){
         var name = albumPost.name;
-        var filterName = filters.album;
+        var filterName = filters.albumName;
         console.log(name,filterName);
         if (name != filterName) {
             return false;
@@ -89,7 +88,6 @@ function albumSearch(albumPost, filters) {
     if (filters.artistName){
         var artist = albumPost.artist;
         var filterArtist = filters.artistName;
-        console.log(artist,filterArtist);
         if (artist != filterArtist){
             return false;
         }
@@ -104,10 +102,11 @@ function albumSearch(albumPost, filters) {
 
 // WIP
 function doFilters() {
+
     var filters = {
-        albumName : document.getElementById('album-name-filter').value.trim(),
-        artistName : document.getElementById('artist-name-filter').value.trim(),
-        genre : document.getElementById('genre-select').value.trim()
+        albumName : document.getElementById('album-name-filter').value,
+        artistName : document.getElementById('artist-name-filter').value,
+        genre : document.getElementById('genre-select').value
     }
 
 
@@ -117,8 +116,7 @@ function doFilters() {
     }
 
     allAlbums.forEach(function(album) {
-        console.log(album);
-        console.log(albumSearch(album,filters));
+        console.log(filters);
         if (albumSearch(album,filters)){
             insertAlbum(album.name, album.artist, album.genre, coverURL);
         }
