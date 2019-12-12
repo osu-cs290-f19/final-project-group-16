@@ -107,6 +107,17 @@ body { /* Include background image of a shelf. Repeats and follows when the user
     border-style: solid;
 }
 
+.close {
+    margin: 5px 5px 5px 5px;
+    padding: 3px 3px 3px 3px;
+    background-color: #a6a6a6; /* light background */
+    color: white; /* daker font color */
+    border-radius: 5px;
+    font-weight: bold;
+    border-color: #8c8c8c;
+    border-style: solid;
+}
+
 label {
   font-weight: bold;
   color: #737373;
@@ -157,9 +168,15 @@ aside input {
 }
 
 #add-button {
-  align-items: center;
-  margin-left: 20px;
-  padding: 3px 86px 3px 86px;
+  float: left;
+  margin-left: 10px;
+  padding: 3px 36px 3px 36px;
+}
+
+#close-button {
+  float: right;
+  margin-right: 10px;
+  padding: 3px 36px 3px 36px;
 }
 
 .hidden {
