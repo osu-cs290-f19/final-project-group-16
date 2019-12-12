@@ -99,8 +99,8 @@ body { /* Include background image of a shelf. Repeats and follows when the user
 .action-button {
     margin: 5px 5px 5px 5px;
     padding: 3px 3px 3px 3px;
-    background-color: #a6a6a6; /* light background */
-    color: white; /* daker font color */
+    background-color: #89642a; /* light background */
+    color: #dcbd8e; /* daker font color */
     border-radius: 5px;
     font-weight: bold;
     border-color: #8c8c8c;
