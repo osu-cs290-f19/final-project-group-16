@@ -157,7 +157,6 @@ function doFilters() {
     }
 
     allAlbums.forEach(function(album) {
-        console.log(filters);
         if (albumSearch(album,filters)){
             insertAlbum(album.name, album.artist, album.genre, album.url);
         }
@@ -195,9 +194,10 @@ function filterAlbums(event){
 function updateList(){
     var albumElems = document.getElementsByClassName('album');
     for (var i = 0; i < albumElems.length; i++) {
-    allAlbums.push(parseAlbumElem(albumElems[i]));
+        allAlbums.push(parseAlbumElem(albumElems[i]));
     }
 }
+
 updateList();
 var addAlbumCoverURL = document.getElementById('album-cover-add');
 addAlbumCoverURL.addEventListener('change',addURL);
