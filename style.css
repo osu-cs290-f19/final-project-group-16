@@ -155,6 +155,7 @@ aside input {
 /* 404 cs */
 
 .error-page {
+  color: gray;
   text-align: center;
   font-size: xx-large;
 }
