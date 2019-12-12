@@ -1,3 +1,5 @@
+
+
 var coverURL = [];
 var genre = [];
 var album = [];
@@ -85,6 +87,7 @@ function addAlbum(event){
     });
 
     insertAlbum(album, artist, genre, coverURL);
+    
 
     postRequest.send(requestBody);
 

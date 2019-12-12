@@ -13,11 +13,11 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
-app.post('/album/:album/addAlbum',function(req,res,next){
+app.post('/albums/:album/addAlbum',function(req,res,next){
   var album = req.params.album.toLowerCase();
   if (albumData[album]){
     if(req.body && req.body.url && req.body.name && req.body.artist && req.body.genre){
-      albumData[album].albums.push({
+      albumData[album].data.push({
         url: req.body.url,
         name: req.body.name,
         artist: req.body.artist,
