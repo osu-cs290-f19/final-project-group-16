@@ -2,7 +2,7 @@ header {
     display: flex;
     height: 150px;
     background-color: white;
-    color: #bfbfbf;
+    color: #dcbd8e;
     margin: 0 0 0 0;
 }
 
@@ -10,24 +10,27 @@ header h1 {
     font-family: Arial;
     font-size: 50px;
     margin: 25px;
+    margin-top: 50px;
 }
 
 body {
     margin: 0 0 0 0;
-    background-image: url("https://i0.wp.com/getwallpapers.com/wallpaper/full/c/6/9/619387.jpg");
+    background-image: url("https://www.socaldrivingschool.com/image/desk-and-shelves-desktop-wallpaper-wallpapersafari-bookshelves-with-wallpaper-for-background_1568552983_680x680_75c0496e38528f03.jpg");
+    background-size: 100vh;
     background-repeat: repeat;
     background-attachment: scroll;
 }
 
 .content {
     display: flex;
-    padding-top: 100px;
+    padding-top: 25px;
 }
+
 #topbar {
     display: inline-flex;
     font-family: Arial;
     width: 100%;
-    background-color: #d9d9d9; /* else: whitesmoke */
+    background-color: #dcbd8e; /* else: whitesmoke */
     justify-content: center;
 }
 
@@ -43,10 +46,10 @@ body {
 }
 
 .album-pic {
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     border-radius: 2px;
-    box-shadow: 10px 10px black;
+    box-shadow: 10px 10px 10px black;
 
 }
 
@@ -56,7 +59,7 @@ body {
 }
 
 #album {
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 50px 10px;
 }
 
 .album {
@@ -66,20 +69,31 @@ body {
 }
 
 .album-pic:hover { /* Enlarges the album picture when hovered over. */
-  height: 300px;
+  height: 175px;
   width: auto;
 
 }
 
-#add-album {
+#add-album { /* modal */
     float: right;
-    margin: 5px 5px 5px 5px;
-    height:100vh;
+    /* margin: 5px 5px 5px 5px;*/
+    max-height: 75%;
+    max-width: 75%;
 }
 
 #add-album div {
     font-family: Arial;
     margin: 10px 10px 10px 10px;
+
+}
+
+.album-add img {
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  max-height: 150px;
+  border-radius: 2px;
+  box-shadow: 10px 10px 10px black;
 }
 
 .action-button {
@@ -104,13 +118,13 @@ input {
   outline: 0;
   padding-left: 10px;
   padding: 5px 0px 5px 10px;
-  background: #a6a6a6;
+  background: #a3815e;
   font-weight: bold;
   color: white;
 }
 
 select {
-  background: #a6a6a6;
+  background: #a3815e;
   color: white;
 }
 
