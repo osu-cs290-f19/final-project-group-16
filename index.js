@@ -27,56 +27,68 @@ function addGenre(event){
 }
 
 function insertAlbum(name, artist, genre, url){
-    var albumDiv = document.createElement('div');
-    albumDiv.classList.add('album');
-    albumDiv.setAttribute('data-album',name);
-    albumDiv.setAttribute('data-artist',artist);
-    albumDiv.setAttribute('data-genre', genre);
+    var newAlbumPost = Handlebars.templates.albumDiv({
+      album: name,
+      artist: artist,
+      genre: genre,
+      url: url
+    });
 
-    var albumImg = document.createElement('img');
-    albumImg.src= url;
-    albumImg.classList.add('album-pic');
+    var albumSection = document.getElementById('albums');
+    albumSection.insertAdjacentHTML('beforeend', newAlbumPost);
 
-    albumDiv.appendChild(albumImg);
-
-    var songDiv = document.createElement('div');
-    songDiv.classList.add('hidden');
-
-    albumDiv.appendChild(songDiv);
-
-    var albums = document.getElementById('albums');
-    albums.appendChild(albumDiv);
+//     var albumDiv = document.createElement('div');
+//     albumDiv.classList.add('album');
+//     albumDiv.setAttribute('data-album',name);
+//     albumDiv.setAttribute('data-artist',artist);
+//     albumDiv.setAttribute('data-genre', genre);
+//
+//     var albumImg = document.createElement('img');
+//     albumImg.src= url;
+//     albumImg.classList.add('album-pic');
+//
+//     albumDiv.appendChild(albumImg);
+//
+//     var songDiv = document.createElement('div');
+//     songDiv.classList.add('hidden');
+//
+//     albumDiv.appendChild(songDiv);
+//
+//     var albums = document.getElementById('albums');
+//     albums.appendChild(albumDiv);
 }
 
 function addAlbum(event){
+    if(!album || !artist ||!genre || !coverURL){
+      alert("You must fill all fields to add an album");
+    }else {
+
     insertAlbum(album, artist, genre, coverURL);
 
     var someelse = document.getElementById('add-album');
     someelse.classList.add('hidden');
-    
+
     var something = document.getElementById('album-add-pic');
     something.classList.remove('hidden');
-
+  }
 }
 
 
 // WIP
 function albumSearch(albumPost, filters) {
-    console.log(filters.album);
     if (filters.albumName){
-        var name = albumPost.name.toLowerCase();
-        var filterName = filters.album.toLowerCase();
-
-        if (name.indexOf(filterName) === -1) {
+        var name = albumPost.name;
+        var filterName = filters.albumName;
+        console.log(name,filterName);
+        if (name != filterName) {
             return false;
         }
     }
 
     if (filters.artistName){
-        var artist = albumPost.artist.toLowerCase();
-        console.log(artist);
-        var filterArtist = filters.artistName.toLowerCase();
-        if (artist.indexOf(filterArtist) === -1){
+        var artist = albumPost.artist;
+        var filterArtist = filters.artistName;
+        if (artist != filterArtist){
             return false;
         }
     }
@@ -90,11 +102,13 @@ function albumSearch(albumPost, filters) {
 
 // WIP
 function doFilters() {
+
     var filters = {
-        albumName : document.getElementById('album-name-filter').value.trim(),
-        artistName : document.getElementById('artist-name-filter').value.trim(),
-        genre : document.getElementById('genre-select').value.trim()
+        albumName : document.getElementById('album-name-filter').value,
+        artistName : document.getElementById('artist-name-filter').value,
+        genre : document.getElementById('genre-select').value
     }
+
 
     var albumContainer = document.getElementById('albums');
     while(albumContainer.lastChild){
@@ -102,6 +116,7 @@ function doFilters() {
     }
 
     allAlbums.forEach(function(album) {
+        console.log(filters);
         if (albumSearch(album,filters)){
             insertAlbum(album.name, album.artist, album.genre, coverURL);
         }
@@ -113,8 +128,9 @@ function parseAlbumElem(album){
     var post = {
         name: album.getAttribute('data-album'),
         artist : album.getAttribute('data-artist'),
-        genre : album.getAttribute('genre')
+        genre : album.getAttribute('data-genre')
     };
+
 
     var postImg = album.querySelector('#album > img:first-of-type');
     post.url = postImg.src;
@@ -139,8 +155,6 @@ var albumElems = document.getElementsByClassName('album');
 for (var i = 0; i < albumElems.length; i++) {
 allAlbums.push(parseAlbumElem(albumElems[i]));
 }
-console.log(allAlbums);
-
 
 
 var addAlbumCoverURL = document.getElementById('album-cover-add');

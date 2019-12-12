@@ -165,3 +165,14 @@ aside input {
 .hidden {
     display:none;
 }
+
+/* 404 cs */
+
+.error-page {
+  color: gray;
+  text-align: center;
+  font-size: xx-large;
+}
+.error-page h4 {
+  font-weight: lighter;
+}
