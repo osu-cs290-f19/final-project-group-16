@@ -197,7 +197,7 @@ function updateList(){
     allAlbums.push(parseAlbumElem(albumElems[i]));
     }
 }
-updateList();
+
 var addAlbumCoverURL = document.getElementById('album-cover-add');
 addAlbumCoverURL.addEventListener('change',addURL);
 
