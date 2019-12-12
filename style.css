@@ -6,14 +6,14 @@ header {
     margin: 0 0 0 0;
 }
 
-header h1 {
+header h1 { /*Title of the website... Bookcase Album */
     font-family: Arial;
     font-size: 50px;
     margin: 25px;
     margin-top: 50px;
 }
 
-body {
+body { /* Include background image of a shelf. Repeats and follows when the user scrolls */
     margin: 0 0 0 0;
     background-image: url("https://www.socaldrivingschool.com/image/desk-and-shelves-desktop-wallpaper-wallpapersafari-bookshelves-with-wallpaper-for-background_1568552983_680x680_75c0496e38528f03.jpg");
     background-size: 100vh;
@@ -21,12 +21,12 @@ body {
     background-attachment: scroll;
 }
 
-.content {
+.content { /* Albums, add album image */
     display: flex;
     padding-top: 25px;
 }
 
-#topbar {
+#topbar { /*Navigation bar that updates the filters of the albums */
     display: inline-flex;
     font-family: Arial;
     width: 100%;
@@ -39,7 +39,7 @@ body {
     margin: 10px 10px 10px 10px;
 }
 
-#update-button {
+#update-button { /* Update button in the top bar */
   position: relative;
   top: 5px;
   padding-bottom: 5px;
@@ -53,12 +53,12 @@ body {
 
 }
 
-#albums {
+#albums { /* Group of album images. */
     display: flex;
     flex-wrap: wrap;
 }
 
-#album {
+#album { /* Individual album ID. */
     margin: 10px 10px 50px 10px;
 }
 
@@ -81,13 +81,13 @@ body {
     max-width: 75%;
 }
 
-#add-album div {
+#add-album div { /* inside of the add-album modal.... text include */
     font-family: Arial;
     margin: 10px 10px 10px 10px;
 
 }
 
-.album-add img {
+.album-add img { /* add image button */
   position: relative;
   top: 10px;
   margin-left: 10px;
