@@ -78,8 +78,15 @@ body { /* Include background image of a shelf. Repeats and follows when the user
 #add-album { /* modal */
     float: right;
     /* margin: 5px 5px 5px 5px;*/
-    max-height: 75%;
-    max-width: 75%;
+    position: fixed;
+    top: 42%;
+    bottom: 0;
+    left: 42%;
+    right: 0;
+    z-index: 1010;
+    overflow: scroll;
+    /* max-height: 75%; */
+    /* max-width: 75%; */
 }
 
 #add-album div { /* inside of the add-album modal.... text include */
