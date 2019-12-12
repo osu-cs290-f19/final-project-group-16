@@ -2,32 +2,35 @@ header {
     display: flex;
     height: 150px;
     background-color: white;
-    color: #bfbfbf;
+    color: #dcbd8e;
     margin: 0 0 0 0;
 }
 
-header h1 {
+header h1 { /*Title of the website... Bookcase Album */
     font-family: Arial;
     font-size: 50px;
     margin: 25px;
+    margin-top: 50px;
 }
 
-body {
+body { /* Include background image of a shelf. Repeats and follows when the user scrolls */
     margin: 0 0 0 0;
-    background-image: url("https://i0.wp.com/getwallpapers.com/wallpaper/full/c/6/9/619387.jpg");
+    background-image: url("https://www.socaldrivingschool.com/image/desk-and-shelves-desktop-wallpaper-wallpapersafari-bookshelves-with-wallpaper-for-background_1568552983_680x680_75c0496e38528f03.jpg");
+    background-size: 100vh;
     background-repeat: repeat;
     background-attachment: scroll;
 }
 
-.content {
+.content { /* Albums, add album image */
     display: flex;
-    padding-top: 100px;
+    padding-top: 25px;
 }
-#topbar {
+
+#topbar { /*Navigation bar that updates the filters of the albums */
     display: inline-flex;
     font-family: Arial;
     width: 100%;
-    background-color: #d9d9d9; /* else: whitesmoke */
+    background-color: #dcbd8e; /* else: whitesmoke */
     justify-content: center;
 }
 
@@ -36,27 +39,27 @@ body {
     margin: 10px 10px 10px 10px;
 }
 
-#update-button {
+#update-button { /* Update button in the top bar */
   position: relative;
   top: 5px;
   padding-bottom: 5px;
 }
 
 .album-pic {
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     border-radius: 2px;
-    box-shadow: 10px 10px black;
+    box-shadow: 10px 10px 10px black;
 
 }
 
-#albums {
+#albums { /* Group of album images. */
     display: flex;
     flex-wrap: wrap;
 }
 
-#album {
-    margin: 10px 10px 10px 10px;
+#album { /* Individual album ID. */
+    margin: 10px 10px 50px 10px;
 }
 
 .album {
@@ -66,23 +69,45 @@ body {
 }
 
 .album-pic:hover { /* Enlarges the album picture when hovered over. */
-  height: 300px;
+  height: 175px;
   width: auto;
 
 }
 
-#add-album {
+#add-album { /* modal */
     float: right;
-    margin: 5px 5px 5px 5px;
-    height:100vh;
+    /* margin: 5px 5px 5px 5px;*/
+    max-height: 75%;
+    max-width: 75%;
 }
 
-#add-album div {
+#add-album div { /* inside of the add-album modal.... text include */
     font-family: Arial;
     margin: 10px 10px 10px 10px;
+
+}
+
+.album-add img { /* add image button */
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  max-height: 150px;
+  border-radius: 2px;
+  box-shadow: 10px 10px 10px black;
 }
 
 .action-button {
+    margin: 5px 5px 5px 5px;
+    padding: 3px 3px 3px 3px;
+    background-color: #a6a6a6; /* light background */
+    color: white; /* daker font color */
+    border-radius: 5px;
+    font-weight: bold;
+    border-color: #8c8c8c;
+    border-style: solid;
+}
+
+.close {
     margin: 5px 5px 5px 5px;
     padding: 3px 3px 3px 3px;
     background-color: #a6a6a6; /* light background */
@@ -104,13 +129,13 @@ input {
   outline: 0;
   padding-left: 10px;
   padding: 5px 0px 5px 10px;
-  background: #a6a6a6;
+  background: #a3815e;
   font-weight: bold;
   color: white;
 }
 
 select {
-  background: #a6a6a6;
+  background: #a3815e;
   color: white;
 }
 
@@ -143,9 +168,15 @@ aside input {
 }
 
 #add-button {
-  align-items: center;
-  margin-left: 20px;
-  padding: 3px 86px 3px 86px;
+  float: left;
+  margin-left: 10px;
+  padding: 3px 36px 3px 36px;
+}
+
+#close-button {
+  float: right;
+  margin-right: 10px;
+  padding: 3px 36px 3px 36px;
 }
 
 .hidden {
