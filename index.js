@@ -84,7 +84,7 @@ function addAlbum(event){
         }
     });
 
-    //insertAlbum(album, artist, genre, coverURL);
+    insertAlbum(album, artist, genre, coverURL);
 
     postRequest.send(requestBody);
 
