@@ -68,22 +68,30 @@ function addAlbum(event){
     something.classList.remove('hidden');
 }
 
+function closeAdd(event) {
+    var someelse = document.getElementById('add-album');
+    someelse.classList.add('hidden');
 
-// WIP
+    var something = document.getElementById('album-add-pic');
+    something.classList.remove('hidden');
+}
+
+
+
 function albumSearch(albumPost, filters) {
     if (filters.albumName){
-        var name = albumPost.name;
-        var filterName = filters.albumName;
+        var name = albumPost.name.toLowerCase();
+        var filterName = filters.albumName.toLowerCase();
         console.log(name,filterName);
-        if (name != filterName) {
+        if (name.indexOf(filterName)===-1) {
             return false;
         }
     }
 
     if (filters.artistName){
-        var artist = albumPost.artist;
-        var filterArtist = filters.artistName;
-        if (artist != filterArtist){
+        var artist = albumPost.artist.toLowerCase();
+        var filterArtist = filters.artistName.toLowerCase();
+        if (artist.indexOf(filterArtist)===-1){
             return false;
         }
     }
@@ -95,12 +103,12 @@ function albumSearch(albumPost, filters) {
     return true;
 }
 
-// WIP
+
 function doFilters() {
 
     var filters = {
-        albumName : document.getElementById('album-name-filter').value,
-        artistName : document.getElementById('artist-name-filter').value,
+        albumName : document.getElementById('album-name-filter').value.toLowerCase(),
+        artistName : document.getElementById('artist-name-filter').value.toLowerCase(),
         genre : document.getElementById('genre-select').value
     }
 
@@ -113,12 +121,11 @@ function doFilters() {
     allAlbums.forEach(function(album) {
         console.log(filters);
         if (albumSearch(album,filters)){
-            insertAlbum(album.name, album.artist, album.genre, coverURL);
+            insertAlbum(album.name, album.artist, album.genre, album.url);
         }
     });
 }
 
-// WIP
 function parseAlbumElem(album){
     var post = {
         name: album.getAttribute('data-album'),
@@ -146,6 +153,7 @@ function filterAlbums(event){
     doFilters();
 }
 
+
 var albumElems = document.getElementsByClassName('album');
 for (var i = 0; i < albumElems.length; i++) {
 allAlbums.push(parseAlbumElem(albumElems[i]));
@@ -172,3 +180,6 @@ addAlbumPic.addEventListener('click',showAddAlbum);
 
 var updateButton = document.getElementById('update-button');
 updateButton.addEventListener('click', filterAlbums);
+
+var closeButton = document.getElementById('close-button');
+closeButton.addEventListener('click', closeAdd);
