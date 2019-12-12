@@ -120,7 +120,6 @@ function albumSearch(albumPost, filters) {
     if (filters.albumName){
         var name = albumPost.name.toLowerCase();
         var filterName = filters.albumName.toLowerCase();
-        console.log(name,filterName);
         if (name.indexOf(filterName)===-1) {
             return false;
         }
@@ -156,7 +155,6 @@ function doFilters() {
     }
 
     allAlbums.forEach(function(album) {
-        console.log(filters);
         if (albumSearch(album,filters)){
             insertAlbum(album.name, album.artist, album.genre, album.url);
         }
@@ -197,7 +195,7 @@ function updateList(){
     allAlbums.push(parseAlbumElem(albumElems[i]));
     }
 }
-
+updateList();
 var addAlbumCoverURL = document.getElementById('album-cover-add');
 addAlbumCoverURL.addEventListener('change',addURL);
 
