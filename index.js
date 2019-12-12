@@ -36,26 +36,17 @@ function insertAlbum(name, artist, genre, url){
 
     var albumSection = document.getElementById('albums');
     albumSection.insertAdjacentHTML('beforeend', newAlbumPost);
+}
 
-//     var albumDiv = document.createElement('div');
-//     albumDiv.classList.add('album');
-//     albumDiv.setAttribute('data-album',name);
-//     albumDiv.setAttribute('data-artist',artist);
-//     albumDiv.setAttribute('data-genre', genre);
-//
-//     var albumImg = document.createElement('img');
-//     albumImg.src= url;
-//     albumImg.classList.add('album-pic');
-//
-//     albumDiv.appendChild(albumImg);
-//
-//     var songDiv = document.createElement('div');
-//     songDiv.classList.add('hidden');
-//
-//     albumDiv.appendChild(songDiv);
-//
-//     var albums = document.getElementById('albums');
-//     albums.appendChild(albumDiv);
+function getAlbumIdFromURL(){
+    var path = window.location.pathname;
+    var pathParts = path.split('/');
+
+    if (pathParts[1] === "people"){
+        return pathParts[2];
+    } else {
+        return null
+    }
 }
 
 function addAlbum(event){
@@ -63,7 +54,39 @@ function addAlbum(event){
       alert("You must fill all fields to add an album");
     }else {
 
-    insertAlbum(album, artist, genre, coverURL);
+    var postRequest = new XMLHttpRequest();
+    var requestURL = '/people/' + getAlbumIdFromURL() + '/addAlbum';
+    postRequest.open('ALBUM',requestURL);
+
+    var requestBody = JSON.stringify({
+        url : coverURL,
+        name : album,
+        artist : artist,
+        genre : genre
+    });
+
+    postRequest.setRequestHeader('Content-Type','application/json');
+
+    postRequest.addEventListener('load',function(event) {
+        if (event.target.status !== 200){
+            var responseBody = event.target.reponse;
+            alert("Error saving data on server side" + responseBody);
+        } else {
+            var albumTemplate = Handlebars.templates.albumDiv;
+            var newAlbumHTML = albumTemplate({
+                url: coverURL,
+                name: album,
+                artist : artist,
+                genre : genre
+            });
+            var albumContainer = document.querySelector('albums');
+            albumContainer.insertAdjacentHTML('beforeend',newAlbumHTML);
+        }
+    });
+
+    //insertAlbum(album, artist, genre, coverURL);
+
+    postRequest.send(requestBody);
 
     var someelse = document.getElementById('add-album');
     someelse.classList.add('hidden');
