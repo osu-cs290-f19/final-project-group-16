@@ -40,51 +40,51 @@ function insertAlbum(name, artist, genre, url){
     albumSection.insertAdjacentHTML('beforeend', newAlbumPost);
 }
 
-function getAlbumIdFromURL(){
-    var path = window.location.pathname;
-    var pathParts = path.split('/');
+// function getAlbumIdFromURL(){
+//     var path = window.location.pathname;
+//     var pathParts = path.split('/');
 
-    if (pathParts[1] === "people"){
-        return pathParts[2];
-    } else {
-        return null
-    }
-}
+//     if (pathParts[1] === "people"){
+//         return pathParts[2];
+//     } else {
+//         return null
+//     }
+// }
 
 function addAlbum(event){
     if(!album || !artist || !genre || !coverURL){
       alert("You must fill all fields to add an album");
     }else {
 
-    var postRequest = new XMLHttpRequest();
-    var requestURL = '/people/' + getAlbumIdFromURL() + '/addAlbum';
-    postRequest.open('ALBUM',requestURL);
+    // var postRequest = new XMLHttpRequest();
+    // var requestURL = '/album/' + getAlbumIdFromURL() + '/addAlbum';
+    // postRequest.open('POST',requestURL);
 
-    var requestBody = JSON.stringify({
-        url : coverURL,
-        name : album,
-        artist : artist,
-        genre : genre
-    });
+    // var requestBody = JSON.stringify({
+    //     url : coverURL,
+    //     name : album,
+    //     artist : artist,
+    //     genre : genre
+    // });
 
-    postRequest.setRequestHeader('Content-Type','application/json');
+    // postRequest.setRequestHeader('Content-Type','application/json');
 
-    postRequest.addEventListener('load',function(event) {
-        if (event.target.status !== 200){
-            var responseBody = event.target.reponse;
-            alert("Error saving data on server side" + responseBody);
-        } else {
-            var albumTemplate = Handlebars.templates.albumDiv;
-            var newAlbumHTML = albumTemplate({
-                url: coverURL,
-                name: album,
-                artist : artist,
-                genre : genre
-            });
-            var albumContainer = document.querySelector('albums');
-            albumContainer.insertAdjacentHTML('beforeend',newAlbumHTML);
-        }
-    });
+    // postRequest.addEventListener('load',function(event) {
+    //     if (event.target.status !== 200){
+    //         var responseBody = event.target.reponse;
+    //         alert("Error saving data on server side" + responseBody);
+    //     } else {
+    //         var albumTemplate = Handlebars.templates.albumDiv;
+    //         var newAlbumHTML = albumTemplate({
+    //             url: coverURL,
+    //             name: album,
+    //             artist : artist,
+    //             genre : genre
+    //         });
+    //         var albumContainer = document.querySelector('albums');
+    //         albumContainer.insertAdjacentHTML('beforeend',newAlbumHTML);
+    //     }
+    // });
 
     insertAlbum(album, artist, genre, coverURL);
     
