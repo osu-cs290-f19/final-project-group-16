@@ -35,7 +35,7 @@ function insertAlbum(name, artist, genre, url){
     });
     var albumSection = document.getElementById('albums');
     albumSection.insertAdjacentHTML('afterbegin', newAlbumPost);
-    updateList();
+    
     // var albumDiv = document.createElement('div');
     // albumDiv.classList.add('album');
     // albumDiv.setAttribute('data-album',name);
@@ -96,7 +96,7 @@ function addAlbum(event){
 
 
     insertAlbum(album, artist, genre, coverURL);
-    
+    updateList();
 
     var someelse = document.getElementById('add-album');
     someelse.classList.add('hidden');
@@ -197,7 +197,7 @@ function updateList(){
     allAlbums.push(parseAlbumElem(albumElems[i]));
     }
 }
-
+updateList();
 var addAlbumCoverURL = document.getElementById('album-cover-add');
 addAlbumCoverURL.addEventListener('change',addURL);
 
