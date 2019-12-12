@@ -1,41 +1,52 @@
 header {
     display: flex;
     height: 150px;
-    background-color: rgb(20, 20, 20);
-    color: rgb(233,233,233);
+    background-color: white;
+    color: #bfbfbf;
     margin: 0 0 0 0;
 }
 
 header h1 {
     font-family: Arial;
+    font-size: 50px;
     margin: 25px;
 }
 
 body {
     margin: 0 0 0 0;
+    background-image: url("https://i0.wp.com/getwallpapers.com/wallpaper/full/c/6/9/619387.jpg");
+    background-repeat: repeat;
+    background-attachment: scroll;
 }
 
 .content {
     display: flex;
+    padding-top: 100px;
 }
 #topbar {
     display: inline-flex;
     font-family: Arial;
-    width:100%;
-    background-color: whitesmoke;
+    width: 100%;
+    background-color: #d9d9d9; /* else: whitesmoke */
     justify-content: center;
 }
 
 #topbar div {
     float: left;
-    margin: 5px 100px 5px 5px;
+    margin: 10px 10px 10px 10px;
+}
+
+#update-button {
+  position: relative;
+  top: 5px;
+  padding-bottom: 5px;
 }
 
 .album-pic {
     height: 250px;
     width: 250px;
     border-radius: 2px;
-    box-shadow: 5px 5px lightgrey;
+    box-shadow: 10px 10px black;
 
 }
 
@@ -54,39 +65,87 @@ body {
     margin: 10px 10px 10px 10px;
 }
 
-.album-add {
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px 10px 10px 10px;
+.album-pic:hover { /* Enlarges the album picture when hovered over. */
+  height: 300px;
+  width: auto;
+
 }
 
-#add-album{
+#add-album {
     float: right;
     margin: 5px 5px 5px 5px;
     height:100vh;
 }
 
-  #add-album div {
+#add-album div {
     font-family: Arial;
     margin: 10px 10px 10px 10px;
 }
 
-#add-button {
-    align-items: center;
-}
-
-#topbar {
-  background-color: #b3b3b3;
-  width: 100%;
-}
-
-#update-button {
+.action-button {
     margin: 5px 5px 5px 5px;
     padding: 3px 3px 3px 3px;
-    background-color: #262626; /* dark background */
-    color: #f2f2f2; /* light font color */
+    background-color: #a6a6a6; /* light background */
+    color: white; /* daker font color */
     border-radius: 5px;
     font-weight: bold;
+    border-color: #8c8c8c;
+    border-style: solid;
+}
+
+label {
+  font-weight: bold;
+  color: #737373;
+}
+
+input {
+  border: 0;
+  border-radius: 3px;
+  outline: 0;
+  padding-left: 10px;
+  padding: 5px 0px 5px 10px;
+  background: #a6a6a6;
+  font-weight: bold;
+  color: white;
+}
+
+select {
+  background: #a6a6a6;
+  color: white;
+}
+
+option {
+  background: #bfbfbf;
+}
+
+option:hover {
+  background: #808080;
+}
+
+#genre-select {
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+aside {
+  position: relative;
+  top: 6px;
+  background: #d9d9d9;
+  border-radius: 3px;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+aside input {
+  padding: 3px 40px 3px 3px;
+}
+
+#add-button {
+  align-items: center;
+  margin-left: 20px;
+  padding: 3px 86px 3px 86px;
 }
 
 .hidden {

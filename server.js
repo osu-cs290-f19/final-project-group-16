@@ -9,6 +9,7 @@ var albumData = require(__dirname + '/albumData.json');
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
 
