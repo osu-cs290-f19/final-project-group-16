@@ -1,8 +1,8 @@
 header {
     display: flex;
     height: 150px;
-    background-color: white;
-    color: #dcbd8e;
+    background-color: #774E24;
+    color: black;
     margin: 0 0 0 0;
 }
 
@@ -32,6 +32,7 @@ body { /* Include background image of a shelf. Repeats and follows when the user
     width: 100%;
     background-color: #dcbd8e; /* else: whitesmoke */
     justify-content: center;
+    color: black;
 }
 
 #topbar div {
@@ -120,7 +121,7 @@ body { /* Include background image of a shelf. Repeats and follows when the user
 
 label {
   font-weight: bold;
-  color: #737373;
+  color: #262626;
 }
 
 input {
