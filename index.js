@@ -75,17 +75,17 @@ function albumSearch(albumPost, filters) {
     if (filters.albumName){
         var name = albumPost.name;
         var filterName = filters.album;
-
-        if (name.indexOf(filterName) === -1) {
+        console.log(name,filterName);
+        if (name != filterName) {
             return false;
         }
     }
 
     if (filters.artistName){
         var artist = albumPost.artist;
-        console.log(artist);
         var filterArtist = filters.artistName;
-        if (artist.indexOf(filterArtist) === -1){
+        console.log(artist,filterArtist);
+        if (artist != filterArtist){
             return false;
         }
     }
@@ -105,7 +105,6 @@ function doFilters() {
         genre : document.getElementById('genre-select').value.trim()
     }
 
-    console.log(filters);
 
     var albumContainer = document.getElementById('albums');
     while(albumContainer.lastChild){
@@ -113,6 +112,8 @@ function doFilters() {
     }
 
     allAlbums.forEach(function(album) {
+        console.log(album);
+        console.log(albumSearch(album,filters));
         if (albumSearch(album,filters)){
             insertAlbum(album.name, album.artist, album.genre, coverURL);
         }
@@ -121,12 +122,12 @@ function doFilters() {
 
 // WIP
 function parseAlbumElem(album){
-
     var post = {
         name: album.getAttribute('data-album'),
         artist : album.getAttribute('data-artist'),
-        genre : album.getAttribute('genre')
+        genre : album.getAttribute('data-genre')
     };
+
 
     var postImg = album.querySelector('#album > img:first-of-type');
     post.url = postImg.src;
@@ -151,8 +152,6 @@ var albumElems = document.getElementsByClassName('album');
 for (var i = 0; i < albumElems.length; i++) {
 allAlbums.push(parseAlbumElem(albumElems[i]));
 }
-console.log(allAlbums);
-
 
 
 var addAlbumCoverURL = document.getElementById('album-cover-add');
