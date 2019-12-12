@@ -33,21 +33,22 @@ function insertAlbum(name, artist, genre, url){
       genre: genre,
       url: url
     });
-
     var albumSection = document.getElementById('albums');
     albumSection.insertAdjacentHTML('afterbegin', newAlbumPost);
 
-//     var albumDiv = document.createElement('div');
-//     albumDiv.classList.add('album');
-//     albumDiv.setAttribute('data-album',name);
-//     albumDiv.setAttribute('data-artist',artist);
-//     albumDiv.setAttribute('data-genre', genre);
-//
-//     var albumImg = document.createElement('img');
-//     albumImg.src= url;
-//     albumImg.classList.add('album-pic');
-//
-//     albumDiv.appendChild(albumImg);
+    // var albumDiv = document.createElement('div');
+    // albumDiv.classList.add('album');
+    // albumDiv.setAttribute('data-album',name);
+    // albumDiv.setAttribute('data-artist',artist);
+    // albumDiv.setAttribute('data-genre', genre);
+
+    // var albumImg = document.createElement('img');
+    // albumImg.src= url;
+    // albumImg.classList.add('album-pic');
+
+    // albumDiv.appendChild(albumImg);
+
+    // allAlbums.push(albumDiv);
 //
 //     var songDiv = document.createElement('div');
 //     songDiv.classList.add('hidden');
@@ -95,6 +96,7 @@ function addAlbum(event){
 
 
     insertAlbum(album, artist, genre, coverURL);
+    updateList();
 
     var someelse = document.getElementById('add-album');
     someelse.classList.add('hidden');
@@ -148,7 +150,6 @@ function doFilters() {
         genre : document.getElementById('genre-select').value
     }
 
-
     var albumContainer = document.getElementById('albums');
     while(albumContainer.lastChild){
         albumContainer.removeChild(albumContainer.lastChild);
@@ -190,11 +191,12 @@ function filterAlbums(event){
 }
 
 
-var albumElems = document.getElementsByClassName('album');
-for (var i = 0; i < albumElems.length; i++) {
-allAlbums.push(parseAlbumElem(albumElems[i]));
+function updateList(){
+    var albumElems = document.getElementsByClassName('album');
+    for (var i = 0; i < albumElems.length; i++) {
+    allAlbums.push(parseAlbumElem(albumElems[i]));
+    }
 }
-
 
 var addAlbumCoverURL = document.getElementById('album-cover-add');
 addAlbumCoverURL.addEventListener('change',addURL);
